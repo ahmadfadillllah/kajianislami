@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AStarController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FloydWarshallController;
 use App\Http\Controllers\KajianIslamiController;
 use App\Http\Controllers\SaranController;
 use Illuminate\Support\Facades\Route;
@@ -45,4 +47,10 @@ Route::post('/dashboard/kajian-islami/store', [KajianIslamiController::class, 's
 Route::get('/dashboard/kajian-islami/{id}/edit', [KajianIslamiController::class, 'edit']);
 Route::post('/dashboard/kajian-islami/{id}/update', [KajianIslamiController::class, 'update']);
 Route::get('/dashboard/kajian-islami/{id}/destroy', [KajianIslamiController::class, 'destroy']);
+
+//Algoritma Floyd Warshall
+Route::get('/dashboard/floyd-warshall',[FloydWarshallController::class, 'index'])->name('floydwarshall.index');
+
+//Algoritma A Star
+Route::get('/dashboard/a-star',[AStarController::class, 'index'])->name('astar.index');
 
