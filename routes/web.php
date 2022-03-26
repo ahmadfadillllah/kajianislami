@@ -50,7 +50,9 @@ Route::get('/dashboard/kajian-islami/{id}/destroy', [KajianIslamiController::cla
 
 //Algoritma Floyd Warshall
 Route::get('/dashboard/floyd-warshall',[FloydWarshallController::class, 'index'])->name('floydwarshall.index');
+Route::post('/dashboard/floyd-warshall',[FloydWarshallController::class, 'store'])->name('floydwarshall.store');
 
 //Algoritma A Star
 Route::get('/dashboard/a-star',[AStarController::class, 'index'])->name('astar.index');
+Route::post('/dashboard/a-star',[AStarController::class, 'store'])->name('astar.store');
 

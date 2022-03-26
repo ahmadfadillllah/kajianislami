@@ -18,7 +18,7 @@
                                 </li>
                                 <li class="breadcrumb-item"><a href="#">Kajian</a>
                                 </li>
-                                <li class="breadcrumb-item active"><a href="">Floyd Warshall</a>
+                                <li class="breadcrumb-item active"><a href="">A Star</a>
                                 </li>
                             </ol>
                         </div>
@@ -73,7 +73,7 @@
                                 <h4 class="card-title">Detail Algoritma</h4>
                             </div>
                             <div class="card-body">
-                                <form class="form form-vertical" action="{{route('floydwarshall.store')}}" method="POST">
+                                <form class="form form-vertical" action="{{route('astar.store')}}" method="POST">
                                     @csrf
                                     <div class="row">
                                         <div class="col-12">
@@ -140,7 +140,7 @@
 <!-- END: Footer-->
 
 <script>
-    //Kondisi utk mencari tingkat akurasi yang tinggi
+      //Kondisi utk mencari tingkat akurasi yang tinggi
     // init global variable map
     var mymap = L.map("mapid");
     var marker = L.layerGroup().addTo(mymap);
@@ -224,7 +224,7 @@
             setMapGeo();
         }
         // get data from api
-        axios.get("{{url('api/show-mosque/floyd')}}",{
+        axios.get("{{url('api/show-mosque/astar')}}",{
             // parameter send to controller
                 params: {
                 lat: latitude,
@@ -235,7 +235,6 @@
         .then(function (response) {
             // handle success
             response.data.map(function(element){
-                console.log(element);
                 // get data from api
                 var idMosque = element.id;
                 var txtNameMosque = element.namamasjid;

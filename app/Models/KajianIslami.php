@@ -10,4 +10,9 @@ class KajianIslami extends Model
     use HasFactory;
 
     protected $guarded = [];
+    protected $appends = ['image_url'];
+    public function getImageUrlAttribute()
+    {
+        return asset('gambar/'.$this->attributes['gambar']);
+    }
 }
