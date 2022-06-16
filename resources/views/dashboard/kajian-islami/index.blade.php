@@ -35,92 +35,11 @@
         </div>
 
         <!-- Modal Tambah Kajian -->
-        <div class="modal fade" id="tambahkajian" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Tambah Kajian Islami</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="{{ route('kajianislami.store') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Nama Masjid <span
-                                        style="color: red">*</span></label>
-                                <input type="text" class="form-control" name="namamasjid" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="message-text" class="col-form-label">Alamat <span
-                                        style="color: red">*</span></label>
-                                <textarea class="form-control" name="alamat" required></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Nama Pengurus Masjid <span
-                                        style="color: red">*</span></label>
-                                <input type="text" class="form-control" name="namapengurusmasjid" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">No. Handphone Pengurus Masjid <span
-                                        style="color: red">*</span></label>
-                                <input type="text" class="form-control" name="no_hp" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="message-text" class="col-form-label">Jenis Kajian <span
-                                        style="color: red">*</span></label>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="jeniskajian">
-                                    <label class="form-check-label">Umum (Terbuka untuk siapapun)
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="jeniskajian" checked>
-                                    <label class="form-check-label">Khusus (Hanya pengurus / orang tertentu yang dapat
-                                        mengikuti)
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="message-text" class="col-form-label">Materi Kajian dan Waktu Kajian <span
-                                        style="color: red">*</span></label>
-                                <textarea class="form-control" name="materidanwaktukajian" placeholder="Contoh :
-                                Ceramah Harian (08.00 - 09.00 WITA),
-                                Pengkajian Alquran (20.00 - 21.00),
-                                Pengkajian Alhadist (10.00 - 10.30 WITA) " required></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Gambar Masjid <span
-                                        style="color: red">*</span></label>
-                                <input type="file" class="form-control" name="gambar" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Titik Koordinat <span
-                                        style="color: red">*</span></label>
-                                <input type="text" class="form-control" id="latlong" name="latlong"
-                                    placeholder="Klik Maps dibawah" required readonly>
-                            </div>
-                            <div class="mb-3">
-                                <a onclick="getlokasi()" class="btn btn-secondary me-1">Tampilkan Lokasi</a>
-                                <p id="capa"></p>
-                            </div>
-                            <div class="mb-3">
-                                <div id='mapid' style='min-height: 300px;'>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Save changes</button>
-                            </div>
-
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include ("dashboard.kajian-islami.modal-tambah")
         <div class="content-body">
             @if (session('info'))
-            <div class="alert alert-secondary" role="alert">
+            <div class="alert alert-success p-3" role="alert">
+                <i data-feather="notif"></i>
                 <strong>Info! </strong> {{ session('info') }}
             </div>
             @endif
@@ -136,116 +55,22 @@
                                 <h4 class="card-title">{{ $item->namamasjid }}</h4>
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
+                                        {{-- <li> --}}
+                                        {{--     <a href="{{ route('kajian-islami-tambah-rute', [$item->id]) }}"><i data-feather="map"></i></a> --}}
+                                        {{-- </li> --}}
                                         <li>
-                                            <a data-bs-toggle="modal" data-bs-target="#editkajian"><i data-feather="edit"></i></a>
+                                            <a data-bs-toggle="modal" data-bs-target="#editkajian-{{ $item->id }}"><i data-feather="edit"></i></a>
                                         </li>
                                         <li>
                                             <a href="/dashboard/kajian-islami/{{ $item->id }}/destroy"
                                                 onclick="return confirm('Yakin ingin menghapus kajian tersebut?')"><i
-                                                    data-feather="x"></i></a>
+                                                    data-feather="delete"></i></a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                             <!-- Modal Edit Kajian -->
-                            <div class="modal fade" id="editkajian" tabindex="-1" aria-labelledby="exampleModalLabel"
-                                aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Tambah Kajian Islami</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form action="/dashboard/kajian-islami/{{ $item->id }}/update" method="POST"
-                                                enctype="multipart/form-data">
-                                                @csrf
-                                                <div class="mb-3">
-                                                    <label for="recipient-name" class="col-form-label">Nama Masjid <span
-                                                            style="color: red">*</span></label>
-                                                    <input type="text" class="form-control" name="namamasjid"
-                                                        value="{{ $item->namamasjid }}" required>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="message-text" class="col-form-label">Alamat <span
-                                                            style="color: red">*</span></label>
-                                                    <input class="form-control" name="alamat"
-                                                        value="{{ $item->alamat }}" required></input>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="recipient-name" class="col-form-label">Nama Pengurus
-                                                        Masjid <span style="color: red">*</span></label>
-                                                    <input type="text" class="form-control" name="namapengurusmasjid"
-                                                        value="{{ $item->namapengurusmasjid }}" required>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="recipient-name" class="col-form-label">No. Handphone
-                                                        Pengurus Masjid <span style="color: red">*</span></label>
-                                                    <input type="text" class="form-control" name="no_hp"
-                                                        value="{{ $item->no_hp }}" required>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="message-text" class="col-form-label">Jenis Kajian <span
-                                                            style="color: red">*</span></label>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="jeniskajian">
-                                                        <label class="form-check-label">Umum (Terbuka untuk siapapun)
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="jeniskajian"
-                                                            checked>
-                                                        <label class="form-check-label">Khusus (Hanya pengurus / orang
-                                                            tertentu yang dapat
-                                                            mengikuti)
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="message-text" class="col-form-label">Materi Kajian dan
-                                                        Waktu Kajian <span style="color: red">*</span></label>
-                                                    <input class="form-control" name="materidanwaktukajian"
-                                                        value="{{ $item->materidanwaktukajian }}" placeholder="Contoh :
-                                Ceramah Harian (08.00 - 09.00 WITA),
-                                Pengkajian Alquran (20.00 - 21.00),
-                                Pengkajian Alhadist (10.00 - 10.30 WITA) " required></input>
-                                                </div>
-
-                                                <div class="mb-3">
-                                                    <img src="{{ asset('gambar') }}/{{ $item->gambar }}"
-                                                        alt="Gambar tidak terbaca" style="width: 100px"><br>
-                                                    <label for="recipient-name" class="col-form-label">Gambar Masjid
-                                                        <span style="color: red">*</span></label>
-                                                    <input type="file" class="form-control" name="gambar" required>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="recipient-name" class="col-form-label">Titik Koordinat
-                                                        <span style="color: red">*</span></label>
-                                                    <input type="text" class="form-control" id="latlong" name="latlong"
-                                                        placeholder="{{ $item->latlong }}" required readonly>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <a onclick="getlokasi()" class="btn btn-secondary me-1">Tampilkan
-                                                        Lokasi</a>
-                                                    <p id="capa"></p>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <div id='mapid' style='min-height: 300px;'>
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">Close</button>
-                                                    <button type="submit" class="btn btn-primary">Save changes</button>
-                                                </div>
-
-                                            </form>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {{ $item->view_modal_edit() }}
                             <div class="card-content collapse show">
                                 <div class="card-body">
                                     <div class="row">
@@ -260,16 +85,24 @@
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td>Nama Pengurus Masjid</td>
+                                                            <td>Judul</td>
+                                                            <td>{{ $item->materidanwaktukajian }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Waktu</td>
+                                                            <td>{{ $item->alamat }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Tempat</td>
+                                                            <td>{{ $item->namamasjid }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Pemateri</td>
                                                             <td>{{ $item->namapengurusmasjid }}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td>No. Handphone yang bisa dihubungi</td>
-                                                            <td>{{ $item->no_hp }}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Alamat</td>
-                                                            <td>{{ $item->alamat }}</td>
+                                                            <td>Jumlah Rute</td>
+                                                            <td>{{ $item->rute->count() }}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -294,7 +127,10 @@
 @include('dashboard.master.footer')
 
 <script>
-    function getlokasi() {
+    var marker_pilih_lokasi;
+    var MAPID;
+    function getlokasi(mapid) {
+        MAPID = mapid;
         //jika browser mendukung navigator.geolocation maka akan menjalankan perintah di bawahnya
         if (navigator.geolocation) {
             // getCurrentPosition digunakan untuk mendapatkan lokasi pengguna
@@ -314,7 +150,7 @@
         var capa = document.getElementById("capa");
         capa.innerHTML = "Akurasi : " + accuracy;
 
-        var mymap = L.map("mapid").setView(
+        var mymap = L.map(MAPID).setView(
             [position.coords.latitude, position.coords.longitude],
             13
         );
@@ -333,12 +169,19 @@
 
         // buat fungsi popup saat map diklik
         function onMapClick(e) {
+            /*
             popup
                 .setLatLng(e.latlng)
                 .setContent("koordinatnya adalah " + e
                     .latlng
                 ) //set isi konten yang ingin ditampilkan, kali ini kita akan menampilkan latitude dan longitude
                 .openOn(mymap);
+            */
+            if (marker_pilih_lokasi) {
+                mymap.removeLayer(marker_pilih_lokasi);
+            }
+            marker_pilih_lokasi = new L.marker(e.latlng);
+            mymap.addLayer(marker_pilih_lokasi);
             //value pada form latitde, longitude akan berganti secara otomatis
             document.getElementById('latlong').value = e.latlng
 

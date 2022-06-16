@@ -28,7 +28,7 @@
                   <div class="col-xxl-8 offset-xxl-2 col-xl-8 offset-xl-2">
                      <div class="page__title-wrapper text-center mb-55">
                         <h2 class="page__title-2">Sign in</h2>
-                        <p>it you don't have an account you can <a href="{{ route('register') }}">Register here!</a></p>
+                        <p>Jika belum punya akun silahkan <b><a href="{{ route('register') }}">Daftar disini!</a></b></p>
                      </div>
                   </div>
                </div>
@@ -47,7 +47,7 @@
                            <form action="{{ route('post-login') }}" method="POST">
                             @csrf
                               <div class="sign__input-wrapper mb-25">
-                                 <h5>Work email</h5>
+                                 <h5>Email</h5>
                                  <div class="sign__input">
                                     <input type="email" name="email" placeholder="E-mail address">
                                     <i class="fal fa-envelope"></i>
@@ -72,7 +72,7 @@
                               </div>
                               <button class="w-btn w-btn-11 w-100"> <span></span> Sign In</button>
                               <div class="sign__new text-center mt-20">
-                                 <p>New to Markit? <a href="{{ route('register') }}">Sign Up</a></p>
+                                 <p> Pengguna Baru ? <a href="{{ route('register') }}">Daftar</a></p>
                               </div>
                            </form>
                         </div>

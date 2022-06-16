@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\FloydWarshall;
 use App\Models\KajianIslami;
+use App\Models\RuteKajian;
 use Illuminate\Http\Request;
 
 class FloydWarshallController extends Controller
@@ -18,7 +19,7 @@ class FloydWarshallController extends Controller
     {
         $KajianIslami = KajianIslami::all();
         $datas = [];
-// cek tipe jika tidak sama dengan all maka akan dipilah untuk menampilkan data dengan jangkauan tertentu
+        // cek tipe jika tidak sama dengan all maka akan dipilah untuk menampilkan data dengan jangkauan tertentu
         if ($request->type != 'all') {
             $latFrom = $request->lat;
             $longFrom = $request->long;
@@ -29,13 +30,13 @@ class FloydWarshallController extends Controller
                 $lat = trim($explodeLatlong[0], " ");
                 $long = trim($explodeLatlong[1], " ");
                 // panggil fungsi harversine dan ambil nilai dari perhitungan
-                $distance = round($this->haversineGreatCircleDistance($latFrom,$longFrom,$lat,$long));
+                $distance = round($this->haversineGreatCircleDistance($latFrom, $longFrom, $lat, $long));
                 // jika kurang dari 7 km maka akan ditampung datanya ke variable $datas
-                if($distance <= 7000){
-                    array_push($datas,$value);
+                if ($distance <= 7000) {
+                    array_push($datas, $value);
                 }
             }
-        }else{
+        } else {
             $datas = $KajianIslami;
         }
         return response()->json($datas);
@@ -57,7 +58,8 @@ class FloydWarshallController extends Controller
         $latitudeTo,
         $longitudeTo,
         $earthRadius = 6371000
-    ) {
+    )
+    {
         // convert from degrees to radians
         $latFrom = deg2rad($latitudeFrom);
         $lonFrom = deg2rad($longitudeFrom);
@@ -66,9 +68,9 @@ class FloydWarshallController extends Controller
         // calculate result from convert
         $latDelta = $latTo - $latFrom;
         $lonDelta = $lonTo - $lonFrom;
-        // search angel from to node 
+        // search angel from to node
         $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) +
-            cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
+                cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
         // calculate angel and radius convert to kilo
         return $angle * $earthRadius;
     }
@@ -79,5 +81,13 @@ class FloydWarshallController extends Controller
         $saveData->id_masjid = $request->id_masjid;
         $saveData->save();
         return back();
+    }
+
+    public function show_rute(Request $request)
+    {
+        $rutes = RuteKajian::where("kajian_islami_id", $request->input("id"))
+            ->with("kajian_islami")
+            ->get();
+        return response()->json($rutes);
     }
 }

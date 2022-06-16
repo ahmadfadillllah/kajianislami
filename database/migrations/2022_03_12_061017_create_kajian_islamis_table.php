@@ -18,13 +18,13 @@ class CreateKajianIslamisTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('namamasjid');
             $table->string('alamat');
-            $table->string('namapengurusmasjid');
-            $table->string('no_hp');
-            $table->string('jeniskajian');
             $table->string('materidanwaktukajian');
-            $table->string('gambar');
             $table->string('latlong');
             $table->timestamps();
+            $table->string('namapengurusmasjid')->nullable();
+            $table->string('no_hp')->nullable();
+            $table->string('jeniskajian')->nullable();
+            $table->string('gambar')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users');
         });

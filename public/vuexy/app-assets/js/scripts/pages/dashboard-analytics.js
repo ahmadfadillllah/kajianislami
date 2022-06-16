@@ -7,7 +7,7 @@
     Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
 
-$(window).on('load', function () {
+$(window).on('load', function() {
   'use strict';
 
   var $avgSessionStrokeColor2 = '#ebf0f7';
@@ -35,17 +35,17 @@ $(window).on('load', function () {
   var isRtl = $('html').attr('data-textdirection') === 'rtl';
 
   // On load Toast
-  setTimeout(function () {
-    toastr['success'](
-      'Telah berhasil login ke dashboard',
-      '👋 Welcome!',
-      {
-        closeButton: true,
-        tapToDismiss: false,
-        rtl: isRtl
-      }
-    );
-  }, 2000);
+  // setTimeout(function () {
+  //   toastr['success'](
+  //     'Telah berhasil login ke dashboard',
+  //     '👋 Welcome!',
+  //     {
+  //       closeButton: true,
+  //       tapToDismiss: false,
+  //       rtl: isRtl
+  //     }
+  //   );
+  // }, 2000);
 
   // Subscribed Gained Chart
   // ----------------------------------

@@ -1,7 +1,7 @@
 <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
-            <li class="nav-item me-auto"><a class="navbar-brand" href="{{ asset('vuexy') }}/html/ltr/vertical-menu-template-dark/index.html"><span class="brand-logo">
+            <li class="nav-item me-auto"><a class="navbar-brand" href="{{ route('dashboard.index') }}"><span class="brand-logo">
                         <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24">
                             <defs>
                                 <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
@@ -37,8 +37,15 @@
             </li>
             <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span><i data-feather="more-horizontal"></i>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('kajianislami') }}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Kajian">Kajian</span></a>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="app-chat.html"><i data-feather="message-square"></i><span class="menu-title text-truncate" data-i18n="Chat">Chat</span></a>
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="{{ route('kajianislami') }}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Kajian">Kajian</span></a>
+{{--                @if (\Auth::user()->name == 'admin')--}}
+{{--                <a class="d-flex align-items-center" href="{{ route('kajianislami') }}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Kajian">Kajian</span></a>--}}
+{{--                @endif--}}
+{{--            <li class=" nav-item"><a class="d-flex align-items-center" href="app-chat.html"><i data-feather="message-square"></i><span class="menu-title text-truncate" data-i18n="Chat">Chat</span></a>--}}
+            </li>
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="{{ route('kajian-islami-tambah-rute') }}"><i data-feather="map"></i><span class="menu-title text-truncate" data-i18n="Tambah Rute">Tambah Rute</span></a>
             </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="map"></i><span class="menu-title text-truncate" data-i18n="User">Cari Rute</span></a>
                 <ul class="menu-content">
@@ -48,20 +55,20 @@
                     </li>
                 </ul>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">User</span></a>
-                <ul class="menu-content">
-                    <li><a class="d-flex align-items-center" href="app-user-list.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">List</span></a>
-                    </li>
-                    <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="View">View</span></a>
-                        <ul class="menu-content">
-                            <li><a class="d-flex align-items-center" href="app-user-view-account.html"><span class="menu-item text-truncate" data-i18n="Account">Account</span></a>
-                            </li>
-                            <li><a class="d-flex align-items-center" href="app-user-view-security.html"><span class="menu-item text-truncate" data-i18n="Security">Logout</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
+{{--            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">User</span></a>--}}
+{{--                <ul class="menu-content">--}}
+{{--                    <li><a class="d-flex align-items-center" href="app-user-list.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">List</span></a>--}}
+{{--                    </li>--}}
+{{--                    <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="View">View</span></a>--}}
+{{--                        <ul class="menu-content">--}}
+{{--                            <li><a class="d-flex align-items-center" href="app-user-view-account.html"><span class="menu-item text-truncate" data-i18n="Account">Account</span></a>--}}
+{{--                            </li>--}}
+{{--                            <li><a class="d-flex align-items-center" href="app-user-view-security.html"><span class="menu-item text-truncate" data-i18n="Security">Logout</span></a>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    </li>--}}
+{{--                </ul>--}}
+{{--            </li>--}}
         </ul>
     </div>
 </div>

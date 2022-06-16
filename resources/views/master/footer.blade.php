@@ -11,66 +11,69 @@
                    <div class="footer__widget-title mb-25">
                       <div class="footer__logo">
                          <a href="#">
-                            <img src="{{ asset('wetland') }}/assets/img/logo/logo.png" alt="logo">
+{{--                            <img src="{{ asset('wetland') }}/assets/img/logo/logo.png" alt="logo">--}}
+                             <h4>Dakwah Makasar</h4>
                          </a>
                       </div>
                    </div>
                    <div class="footer__widget-content">
-                      <p>Ever since we started using  we’ve , and more.</p>
+                      <p>
+                          Aplikasi penentuan lokasi kajian islami di Kota Makassar dengan rute terdekat.
+                      </p>
                    </div>
                 </div>
              </div>
-             <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
-                <div class="footer__widget mb-50 footer__pl-70">
-                   <div class="footer__widget-title mb-25">
-                      <h3>Overview</h3>
-                   </div>
-                   <div class="footer__widget-content">
-                      <div class="footer__link footer__link-2">
-                         <ul>
-                            <li><a href="#">Terms</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Cookies</a></li>
-                            <li><a href="#">Integrations</a></li>
-                         </ul>
-                      </div>
-                   </div>
-                </div>
-             </div>
-             <div class="col-xxl-3 col-xl-2 col-lg-2 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".7s">
-                <div class="footer__widget mb-50 footer__pl-90">
-                   <div class="footer__widget-title mb-25">
-                      <h3>Customer</h3>
-                   </div>
-                   <div class="footer__widget-content">
-                      <div class="footer__link footer__link-2">
-                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Product</a></li>
-                            <li><a href="#">Pricing</a></li>
-                            <li><a href="#">Integrations</a></li>
-                         </ul>
-                      </div>
-                   </div>
-                </div>
-             </div>
-             <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".9s">
-                <div class="footer__widget mb-50">
-                   <div class="footer__widget-title mb-25">
-                      <h3>Product</h3>
-                   </div>
-                   <div class="footer__widget-content">
-                      <div class="footer__link footer__link-2">
-                         <ul>
-                            <li><a href="#">Getting Started</a></li>
-                            <li><a href="#">Style Guide</a></li>
-                            <li><a href="#">Licences</a></li>
-                            <li><a href="#">Changelog</a></li>
-                         </ul>
-                      </div>
-                   </div>
-                </div>
-             </div>
+{{--             <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".5s">--}}
+{{--                <div class="footer__widget mb-50 footer__pl-70">--}}
+{{--                   <div class="footer__widget-title mb-25">--}}
+{{--                      <h3>Overview</h3>--}}
+{{--                   </div>--}}
+{{--                   <div class="footer__widget-content">--}}
+{{--                      <div class="footer__link footer__link-2">--}}
+{{--                         <ul>--}}
+{{--                            <li><a href="#">Terms</a></li>--}}
+{{--                            <li><a href="#">Privacy Policy</a></li>--}}
+{{--                            <li><a href="#">Cookies</a></li>--}}
+{{--                            <li><a href="#">Integrations</a></li>--}}
+{{--                         </ul>--}}
+{{--                      </div>--}}
+{{--                   </div>--}}
+{{--                </div>--}}
+{{--             </div>--}}
+{{--             <div class="col-xxl-3 col-xl-2 col-lg-2 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".7s">--}}
+{{--                <div class="footer__widget mb-50 footer__pl-90">--}}
+{{--                   <div class="footer__widget-title mb-25">--}}
+{{--                      <h3>Customer</h3>--}}
+{{--                   </div>--}}
+{{--                   <div class="footer__widget-content">--}}
+{{--                      <div class="footer__link footer__link-2">--}}
+{{--                         <ul>--}}
+{{--                            <li><a href="#">Home</a></li>--}}
+{{--                            <li><a href="#">Product</a></li>--}}
+{{--                            <li><a href="#">Pricing</a></li>--}}
+{{--                            <li><a href="#">Integrations</a></li>--}}
+{{--                         </ul>--}}
+{{--                      </div>--}}
+{{--                   </div>--}}
+{{--                </div>--}}
+{{--             </div>--}}
+{{--             <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".9s">--}}
+{{--                <div class="footer__widget mb-50">--}}
+{{--                   <div class="footer__widget-title mb-25">--}}
+{{--                      <h3>Product</h3>--}}
+{{--                   </div>--}}
+{{--                   <div class="footer__widget-content">--}}
+{{--                      <div class="footer__link footer__link-2">--}}
+{{--                         <ul>--}}
+{{--                            <li><a href="#">Getting Started</a></li>--}}
+{{--                            <li><a href="#">Style Guide</a></li>--}}
+{{--                            <li><a href="#">Licences</a></li>--}}
+{{--                            <li><a href="#">Changelog</a></li>--}}
+{{--                         </ul>--}}
+{{--                      </div>--}}
+{{--                   </div>--}}
+{{--                </div>--}}
+{{--             </div>--}}
              <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="1.2s">
                 <div class="footer__widget mb-50 float-md-end fix">
                    <div class="footer__widget-title mb-25">
@@ -96,7 +99,7 @@
              <div class="row">
                 <div class="col-xxl-12 wow fadeInUp" data-wow-delay=".5s">
                    <div class="footer__copyright-wrapper footer__copyright-wrapper-2 text-center">
-                      <p>Copyright © 2021 All Rights Reserved passion by <a href="#">ThemePure</a></p>
+                      <p>Copyright © 2022 Aplikasi Pencarian Rute Kajian by <a href="#">Dakwah Makasar</a></p>
                    </div>
                 </div>
              </div>

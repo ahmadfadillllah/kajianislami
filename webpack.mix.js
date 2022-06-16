@@ -12,6 +12,9 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/tambah_rute.js', 'public/js/tambah_rute.js')
+    .js('resources/js/floyd_warshall.js', 'public/js/floyd_warshall.js')
+    .js('resources/js/astar.js', 'public/js/astar.js')
     .postCss('resources/css/app.css', 'public/css', [
         //
     ]);

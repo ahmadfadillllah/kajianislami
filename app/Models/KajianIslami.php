@@ -11,8 +11,20 @@ class KajianIslami extends Model
 
     protected $guarded = [];
     protected $appends = ['image_url'];
+
     public function getImageUrlAttribute()
     {
-        return asset('gambar/'.$this->attributes['gambar']);
+        return asset('gambar/' . $this->attributes['gambar']);
+    }
+
+    public function rute()
+    {
+        return $this->hasMany(RuteKajian::class, "kajian_islami_id", "id");
+    }
+
+    public function view_modal_edit()
+    {
+        $item = $this;
+        return view("dashboard.kajian-islami.modal-edit", compact("item"));
     }
 }

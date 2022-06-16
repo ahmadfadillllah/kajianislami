@@ -20,5 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('show-mosque/floyd',[FloydWarshallController::class,'showMosque']);
-Route::get('show-mosque/astar',[AStarController::class,'showMosque']);
+Route::get('show-mosque/floyd', [FloydWarshallController::class, 'showMosque']);
+Route::get('show-mosque/astar', [AStarController::class, 'showMosque']);
+Route::get('show-mosque/rute', [FloydWarshallController::class, 'show_rute']);
