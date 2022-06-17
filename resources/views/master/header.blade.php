@@ -5,7 +5,7 @@
                 <div class="col-xxl-3 col-xl-3 col-lg-2 col-md-6 col-6">
                     <div class="logo">
                         <a href="{{ url("/") }}">
-                            <h4>Dakwah Makasar</h4>
+                            <h4>{{ env('APP_NAME') }}</h4>
                         </a>
                     </div>
                 </div>

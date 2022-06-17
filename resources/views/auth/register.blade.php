@@ -28,7 +28,7 @@
                 <div class="col-xxl-8 offset-xxl-2 col-xl-8 offset-xl-2">
                     <div class="page__title-wrapper text-center mb-55">
                         <h2 class="page__title-2">Register</h2>
-                        <p>Sudah punya akun <b><a href="{{ route('register') }}">Login disini!</a></b></p>
+                        <p>Sudah punya akun <b><a href="{{ route('login') }}">Login disini!</a></b></p>
                     </div>
                 </div>
             </div>

@@ -61,7 +61,7 @@ class KajianIslamiController extends Controller
         // }
         $kajian->save();
 
-        return redirect()->route('kajianislami')->with('info', 'Kajian Islami gagal ditambahkan');
+        return redirect()->route('kajianislami')->with('info', 'Kajian Islami berhasil ditambahkan');
     }
 
     /**

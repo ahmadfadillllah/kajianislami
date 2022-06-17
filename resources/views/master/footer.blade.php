@@ -12,13 +12,13 @@
                       <div class="footer__logo">
                          <a href="#">
 {{--                            <img src="{{ asset('wetland') }}/assets/img/logo/logo.png" alt="logo">--}}
-                             <h4>Dakwah Makasar</h4>
+                             <h4>{{ env('APP_NAME') }}</h4>
                          </a>
                       </div>
                    </div>
                    <div class="footer__widget-content">
                       <p>
-                          Aplikasi penentuan lokasi kajian islami di Kota Makassar dengan rute terdekat.
+                          Aplikasi penentuan lokasi kajian islami di Kota Makassar dengan lintasan terpendek.
                       </p>
                    </div>
                 </div>

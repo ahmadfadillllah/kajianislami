@@ -32,7 +32,7 @@ module.exports = helpers;
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -46,14 +46,14 @@ module.exports = helpers;
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
@@ -73,7 +73,7 @@ L.popup();
 var createControl = function createControl(data) {
   var tujuan = RUTE_TUJUAN.latLong();
   var control = L.Routing.control({
-    waypoints: [L.latLng(-1.616729, 103.623597), L.latLng(tujuan.latitude, tujuan.longitude)],
+    waypoints: [L.latLng(-5.1373588, 119.4455718), L.latLng(tujuan.latitude, tujuan.longitude)],
     routeWhileDragging: true,
     lineOptions: {
       styles: [{

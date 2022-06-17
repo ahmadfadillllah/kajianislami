@@ -22,9 +22,9 @@
             <div class="row align-items-center">
                 <div class="col-xxl-7 col-xl-6 col-lg-6">
                     <div class="hero__content pr-80">
-                        <h2 class="hero__title wow fadeInUp" data-wow-delay=".3s">Makassar Dakwah</h2>
+                        <h2 class="hero__title wow fadeInUp" data-wow-delay=".3s">{{ env('APP_NAME') }}</h2>
                         <p class="wow fadeInUp" data-wow-delay=".5s">Aplikasi penentuan lokasi kajian islami di Kota
-                            Makassar dengan rute terdekat.</p>
+                            Makassar dengan lintasan terpendek.</p>
                         {{--                        <div class="hero__search wow fadeInUp" data-wow-delay=".7s">--}}
                         {{--                           <form action="#">--}}
                         {{--                              <input type="email" placeholder="Enter your email..">--}}

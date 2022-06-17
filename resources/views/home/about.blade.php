@@ -22,11 +22,11 @@
                 <div class="col-xxl-5 col-xl-6 col-lg-6 col-md-9">
                     <div class="about__wrapper mb-10">
                         <div class="section__title-wrapper mb-25">
-                            <h2 class="section__title">Dakwah Makasar</h2>
-                            <p>Dakwah makasar merupakan aplikasi gis untuk membantu ummat muslim mencari lokasi kajian.</p>
+                            <h2 class="section__title">{{ env('APP_NAME') }}</h2>
+                            <p>Kajian Islami merupakan aplikasi gis untuk membantu ummat muslim mencari lokasi kajian dengan lintasan terpendek.</p>
                         </div>
                         <ul>
-                            <li>Rute Terdekat</li>
+                            <li>Lintasan Terpendek</li>
                             <li>Jadwal Kajian</li>
                             <li>Lokasi Masjid</li>
                             <li>Kontak Pengurus Masjid</li>

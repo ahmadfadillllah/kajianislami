@@ -41,6 +41,9 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('vuexy') }}/assets/css/style.css">
         <!-- END: Custom CSS-->
 
+        {{-- SweeAlert 2 --}}
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
         {{-- Leaflet JS --}}
         <link
             rel="stylesheet"

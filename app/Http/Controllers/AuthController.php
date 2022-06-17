@@ -52,6 +52,7 @@ class AuthController extends Controller
         $user = new User;
         $user->name = $request->input("name");
         $user->email = $request->input("email");
+        $user->role = 'masyarakatumum';
         $user->password = Hash::make($request->input("password"));
         $user->save();
         return redirect()->back()->with('success', 'Berhasil daftar, silahkan login');

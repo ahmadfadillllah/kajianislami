@@ -37,17 +37,15 @@
             </li>
             <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span><i data-feather="more-horizontal"></i>
             </li>
+            @if (auth()->user()->role == 'admin')
             <li class=" nav-item">
-                <a class="d-flex align-items-center" href="{{ route('kajianislami') }}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Kajian">Kajian</span></a>
-{{--                @if (\Auth::user()->name == 'admin')--}}
-{{--                <a class="d-flex align-items-center" href="{{ route('kajianislami') }}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Kajian">Kajian</span></a>--}}
-{{--                @endif--}}
-{{--            <li class=" nav-item"><a class="d-flex align-items-center" href="app-chat.html"><i data-feather="message-square"></i><span class="menu-title text-truncate" data-i18n="Chat">Chat</span></a>--}}
+                <a class="d-flex align-items-center" href="{{ route('kajianislami') }}"><i data-feather="users"></i><span class="menu-title text-truncate" data-i18n="Kajian">Kajian</span></a>
             </li>
             <li class="nav-item">
-                <a class="d-flex align-items-center" href="{{ route('kajian-islami-tambah-rute') }}"><i data-feather="map"></i><span class="menu-title text-truncate" data-i18n="Tambah Rute">Tambah Rute</span></a>
+                <a class="d-flex align-items-center" href="{{ route('kajian-islami-tambah-rute') }}"><i data-feather="map"></i><span class="menu-title text-truncate" data-i18n="Tambah Lintasan">Tambah Lintasan</span></a>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="map"></i><span class="menu-title text-truncate" data-i18n="User">Cari Rute</span></a>
+            @endif
+            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="search"></i><span class="menu-title text-truncate" data-i18n="User">Cari Lintasan</span></a>
                 <ul class="menu-content">
                     <li><a class="d-flex align-items-center" href="{{ route('floydwarshall.index') }}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Floyd-Warshall</span></a>
                     </li>
@@ -55,6 +53,18 @@
                     </li>
                 </ul>
             </li>
+            <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Users</span><i data-feather="more-horizontal"></i>
+            </li>
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="{{ route('user.index') }}"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="Kajian">List Pengguna</span></a>
+            </li>
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="{{ route('profile.index') }}"><i data-feather="lock"></i><span class="menu-title text-truncate" data-i18n="Kajian">Profile</span></a>
+            </li>
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="{{ route('logout') }}"><i data-feather="log-out"></i><span class="menu-title text-truncate" data-i18n="Kajian">Logout</span></a>
+            </li>
+
 {{--            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">User</span></a>--}}
 {{--                <ul class="menu-content">--}}
 {{--                    <li><a class="d-flex align-items-center" href="app-user-list.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">List</span></a>--}}
