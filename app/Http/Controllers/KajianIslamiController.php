@@ -44,15 +44,15 @@ class KajianIslamiController extends Controller
 
         $kajian = new KajianIslami;
         $kajian->user_id = Auth::user()->id;
-        $kajian->namamasjid = $request->namamasjid;
-        $kajian->alamat = $request->alamat;
-        $kajian->namapengurusmasjid = $request->namapengurusmasjid;
-        $kajian->materidanwaktukajian = $request->materidanwaktukajian;
+        $kajian->tempat = $request->tempat;
+        $kajian->waktu = $request->waktu;
+        $kajian->pemateri = $request->pemateri;
+        $kajian->judul = $request->judul;
         $kajian->latlong = $request->latlong;
 
-        $kajian->no_hp = "0";
-        $kajian->jeniskajian = "0";
-        $kajian->gambar = "0";
+//        $kajian->no_hp = "0";
+//        $kajian->jeniskajian = "0";
+//        $kajian->gambar = "0";
         // if ($request->hasFile('gambar')) {
         //     $request->file('gambar')->move('gambar/', $request->file('gambar')->getClientOriginalName());
         //     $kajian->gambar = $request->file('gambar')->getClientOriginalName();
@@ -99,10 +99,10 @@ class KajianIslamiController extends Controller
         //
         $kajian = KajianIslami::where("id", $id)->first();
         $kajian->user_id = Auth::user()->id;
-        $kajian->namamasjid = $request->namamasjid;
-        $kajian->alamat = $request->alamat;
-        $kajian->namapengurusmasjid = $request->namapengurusmasjid;
-        $kajian->materidanwaktukajian = $request->materidanwaktukajian;
+        $kajian->tempat = $request->tempat;
+        $kajian->waktu = $request->waktu;
+        $kajian->pemateri = $request->pemateri;
+        $kajian->judul = $request->judul;
         $kajian->save();
         return redirect()->back()->with('info', 'Kajian Islami berhasil diedit');
     }

@@ -99,7 +99,7 @@
                 {{--                                     dituju</label> --}}
                 {{--                                 <div class="input-group input-group-merge"> --}}
                 {{--                                     <input type="text" class="form-control" id="mosque_dest" --}}
-                {{--                                            name="namamasjid" --}}
+                {{--                                            name="tempat" --}}
                 {{--                                            placeholder="Silahkan memasukkan titik lokasi dengan mengklik map dibawah" --}}
                 {{--                                            readonly/> --}}
                 {{--                                 </div> --}}

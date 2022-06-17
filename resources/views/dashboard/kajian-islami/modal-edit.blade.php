@@ -15,24 +15,24 @@
                                                 <div class="mb-3">
                                                     <label for="recipient-name" class="col-form-label">Judul <span
                                                             style="color: red">*</span></label>
-                                                    <input type="text" class="form-control" name="materidanwaktukajian"
-                                                        value="{{ $item->materidanwaktukajian }}" required>
+                                                    <input type="text" class="form-control" name="judul"
+                                                        value="{{ $item->judul }}" required>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="message-text" class="col-form-label">Waktu <span
                                                             style="color: red">*</span></label>
-                                                    <input class="form-control" name="alamat"
-                                                        value="{{ $item->alamat }}" required></input>
+                                                    <input class="form-control" name="waktu"
+                                                        value="{{ $item->waktu }}" required></input>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="recipient-name" class="col-form-label">Tempat <span style="color: red">*</span></label>
-                                                    <input type="text" class="form-control" name="namamasjid"
-                                                        value="{{ $item->namamasjid }}" required>
+                                                    <input type="text" class="form-control" name="tempat"
+                                                        value="{{ $item->tempat }}" required>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="recipient-name" class="col-form-label">Pemateri<span style="color: red">*</span></label>
-                                                    <input type="text" class="form-control" name="namapengurusmasjid"
-                                                        value="{{ $item->namapengurusmasjid }}" required>
+                                                    <input type="text" class="form-control" name="pemateri"
+                                                        value="{{ $item->pemateri }}" required>
                                                 </div>
                                 {{--                 <div class="mb-3"> --}}
                                 {{--                     <label for="message-text" class="col-form-label">Jenis Kajian <span --}}
@@ -54,8 +54,8 @@
                                 {{--                 <div class="mb-3"> --}}
                                 {{--                     <label for="message-text" class="col-form-label">Materi Kajian dan --}}
                                 {{--                         Waktu Kajian <span style="color: red">*</span></label> --}}
-                                {{--                     <input class="form-control" name="materidanwaktukajian" --}}
-                                {{--                         value="{{ $item->materidanwaktukajian }}" placeholder="Contoh : --}}
+                                {{--                     <input class="form-control" name="judul" --}}
+                                {{--                         value="{{ $item->judul }}" placeholder="Contoh : --}}
                                 {{-- Ceramah Harian (08.00 - 09.00 WITA), --}}
                                 {{-- Pengkajian Alquran (20.00 - 21.00), --}}
                                 {{-- Pengkajian Alhadist (10.00 - 10.30 WITA) " required></input> --}}

@@ -14,7 +14,7 @@ class KajianIslami extends Model
 
     public function getImageUrlAttribute()
     {
-        return asset('gambar/' . $this->attributes['gambar']);
+        return asset('gambar/icon.png');
     }
 
     public function rute()

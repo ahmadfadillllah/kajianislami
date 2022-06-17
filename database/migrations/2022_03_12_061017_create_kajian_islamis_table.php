@@ -16,15 +16,15 @@ class CreateKajianIslamisTable extends Migration
         Schema::create('kajian_islamis', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('namamasjid');
-            $table->string('alamat');
-            $table->string('materidanwaktukajian');
+            $table->string('tempat');
+            $table->string('waktu');
+            $table->string('judul');
             $table->string('latlong');
+            $table->string('pemateri');
             $table->timestamps();
-            $table->string('namapengurusmasjid')->nullable();
-            $table->string('no_hp')->nullable();
-            $table->string('jeniskajian')->nullable();
-            $table->string('gambar')->nullable();
+//            $table->string('no_hp')->nullable();
+//            $table->string('jeniskajian')->nullable();
+//            $table->string('gambar')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users');
         });

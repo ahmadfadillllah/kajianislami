@@ -96,9 +96,9 @@ window.showMosque = function(params) {
             response.data.map(function(element) {
                 // get data from api
                 var idMosque = element.id;
-                var txtNameMosque = element.namamasjid;
-                var txtAddressMosque = element.alamat;
-                var txtTypeMosque = element.jeniskajian;
+                var txtNameMosque = element.tempat;
+                var txtAddressMosque = element.waktu;
+                var txtTypeMosque = element.judul;
                 var urlImage = element.image_url;
                 //    custome icon markers
                 var mosqueIcon = new L.Icon({

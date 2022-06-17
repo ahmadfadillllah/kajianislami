@@ -52,7 +52,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">{{ $item->namamasjid }}</h4>
+                                <h4 class="card-title">{{ $item->tempat }}</h4>
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
                                         {{-- <li> --}}
@@ -86,19 +86,19 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>Judul</td>
-                                                            <td>{{ $item->materidanwaktukajian }}</td>
+                                                            <td>{{ $item->judul }}</td>
                                                         </tr>
                                                         <tr>
                                                             <td>Waktu</td>
-                                                            <td>{{ $item->alamat }}</td>
+                                                            <td>{{ $item->waktu }}</td>
                                                         </tr>
                                                         <tr>
                                                             <td>Tempat</td>
-                                                            <td>{{ $item->namamasjid }}</td>
+                                                            <td>{{ $item->tempat }}</td>
                                                         </tr>
                                                         <tr>
                                                             <td>Pemateri</td>
-                                                            <td>{{ $item->namapengurusmasjid }}</td>
+                                                            <td>{{ $item->pemateri }}</td>
                                                         </tr>
                                                         <tr>
                                                             <td>Jumlah Rute</td>

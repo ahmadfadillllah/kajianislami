@@ -47,7 +47,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">{{ $kajian_islami ? "Nama Masjid :: " . $kajian_islami->namamasjid : "Silahkan Pilih Lokasi Masjid Terlebiha Dahulu" }}</h4>
+                                <h4 class="card-title">{{ $kajian_islami ? "Nama Masjid :: " . $kajian_islami->tempat : "Silahkan Pilih Lokasi Masjid Terlebiha Dahulu" }}</h4>
                             </div>
                             <div class="card-content collapse show">
                                 <div class="card-body">
@@ -65,9 +65,9 @@
                                                     <label>Nama Masjid</label>
                                                     <select class="form-control" name="kajian_islami_id" id="kajian_islami_id"
                                                            >
-                                                           <option value="{{ $kajian_islami ? $kajian_islami->id : '' }}"> -- {{ $kajian_islami ? $kajian_islami->namamasjid : '' }} -- </option>
-                                                           @foreach ($kajian_islamis as $kajian_islami) 
-                                                           <option value="{{ $kajian_islami->id }}">{{ $kajian_islami->namamasjid }}</option>
+                                                           <option value="{{ $kajian_islami ? $kajian_islami->id : '' }}"> -- {{ $kajian_islami ? $kajian_islami->tempat : '' }} -- </option>
+                                                           @foreach ($kajian_islamis as $kajian_islami)
+                                                           <option value="{{ $kajian_islami->id }}">{{ $kajian_islami->tempat }}</option>
                                                            @endforeach
                                                     </select>
                                                 </div>

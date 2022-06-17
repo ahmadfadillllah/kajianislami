@@ -11,7 +11,7 @@
                             <div class="mb-3">
                                 <label for="message-text" class="col-form-label">Judul <span
                                         style="color: red">*</span></label>
-                                <textarea class="form-control" name="materidanwaktukajian" placeholder="Contoh :
+                                <textarea class="form-control" name="judul" placeholder="Contoh :
                                 Ceramah Harian (08.00 - 09.00 WITA),
                                 Pengkajian Alquran (20.00 - 21.00),
                                 Pengkajian Alhadist (10.00 - 10.30 WITA) " required></textarea>
@@ -19,17 +19,17 @@
                             <div class="mb-3">
                                 <label for="message-text" class="col-form-label">Waktu <span
                                         style="color: red">*</span></label>
-                                <textarea class="form-control" name="alamat" required></textarea>
+                                <textarea class="form-control" name="waktu" required></textarea>
                             </div>
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Tempat <span
                                         style="color: red">*</span></label>
-                                <input type="text" class="form-control" name="namamasjid" required>
+                                <input type="text" class="form-control" name="tempat" required>
                             </div>
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Pemateri <span
                                         style="color: red">*</span></label>
-                                <input type="text" class="form-control" name="namapengurusmasjid" required>
+                                <input type="text" class="form-control" name="pemateri" required>
                             </div>
                             {{-- <div class="mb-3"> --}}
                             {{--     <label for="recipient-name" class="col-form-label">No. Handphone Pengurus Masjid <span --}}
